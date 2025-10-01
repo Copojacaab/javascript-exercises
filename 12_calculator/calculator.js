@@ -39,8 +39,15 @@ const power = function(base, exp) {
 };
 
 // returns the factorial of a number
-const factorial = function() {
-	
+const factorial = function(n){
+  if(n === 0){
+    return 1;
+  }
+  let risultato = 1;
+  for(let i = n; i > 1; i--){
+    risultato *= i;
+  }
+  return risultato;
 };
 
 console.log(multiply([1,2]));
