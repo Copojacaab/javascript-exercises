@@ -1,14 +1,20 @@
 const findTheOldest = function(arr) {
     let currOldest;
     let currMaxAge = 0;
+    let death;
     arr.forEach(element => {
-        let age = element.yearOfDeath - element.yearOfBirth;
+        if (element.yearOfDeath === undefined){
+            death = new Date().getFullYear();
+        } else{
+            death = element.yearOfDeath;
+        }
+        let age = death - element.yearOfBirth;
         if (age > currMaxAge){
             currMaxAge = age;
             currOldest = element.name;
         }
     });
-    return currOldest.name;
+    return currOldest;
 };
 
     const people = [
